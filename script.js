@@ -4,6 +4,8 @@ const clearButton = document.querySelector(".is-clear");
 const largeDisplay = document.querySelector(".large-display");
 const smallDisplay = document.querySelector(".small-display");
 const btnEquals = document.querySelector(".is-equals");
+const dotButton = document.querySelector(".is-decimal");
+const deleteButton = document.querySelector(".is-delete");
 
 let currentInput = "";
 let previousInput = "";
@@ -13,6 +15,16 @@ function clear() {
   currentInput = "";
   previousInput = "";
   operator = undefined;
+}
+
+function del() {
+  currentInput = currentInput.toString().slice(0, -1);
+}
+
+function appendDecimal(dot) {
+  if (!calculator.displayValue.includes(dot)) {
+    calculator.displayValue += dot;
+  }
 }
 
 function updateDisplay() {
@@ -80,6 +92,16 @@ numberButtons.forEach((button) => {
 
 clearButton.addEventListener("click", () => {
   clear();
+  updateDisplay();
+});
+
+deleteButton.addEventListener("click", () => {
+  del();
+  updateDisplay();
+});
+
+dotButton.addEventListener("click", () => {
+  decimal(target.value);
   updateDisplay();
 });
 

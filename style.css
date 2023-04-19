@@ -73,23 +73,34 @@ h1 {
   padding: 20px;
   color: black;
   background-color: rgb(233, 211, 222);
-  border: 1px solid gray;
-  border-radius: 5px;
+  border: 3px solid whitesmoke;
+  border-radius: 45px;
 }
 
 .inputs button:hover {
   cursor: pointer;
 }
 
-.is-zero,
+.is-zero {
+  grid-column: 1;
+}
+
 .is-clear {
-  grid-column: span 3;
+  grid-column: span 2;
 }
 
 .is-zero {
-  background-color: rgb(243, 108, 175) !important;
+  grid-column: span 2;
+  background-color: rgb(233, 211, 222) !important;
 }
 
 .is-clear {
   background-color: cornflowerblue !important;
+}
+.is-operator {
+  background-color: cadetblue !important;
+}
+.is-equals {
+  grid-column: span 2;
+  background-color: cadetblue !important;
 }

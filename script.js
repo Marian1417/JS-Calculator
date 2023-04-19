@@ -21,12 +21,6 @@ function del() {
   currentInput = currentInput.toString().slice(0, -1);
 }
 
-function appendDecimal(dot) {
-  if (!calculator.displayValue.includes(dot)) {
-    calculator.displayValue += dot;
-  }
-}
-
 function updateDisplay() {
   if (currentInput === "" && largeDisplay.value === "") {
     largeDisplay.value = "";
@@ -97,11 +91,6 @@ clearButton.addEventListener("click", () => {
 
 deleteButton.addEventListener("click", () => {
   del();
-  updateDisplay();
-});
-
-dotButton.addEventListener("click", () => {
-  decimal(target.value);
   updateDisplay();
 });
 
